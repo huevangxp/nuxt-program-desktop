@@ -1,0 +1,47 @@
+{
+  "name": "desktop",
+  "version": "1.0.0",
+  "private": true,
+  "electron": "wait-on http://localhost:3000 && electron .",
+  "electron-dev": "concurrently \"yarn dev\" \"yarn electron\"",
+  "preelectron-pack": "yarn generate",
+  "electron-pack": "electron-builder",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "electron": "wait-on http://localhost:3000 && electron .",
+    "electron-dev": "concurrently \"yarn dev\" \"yarn electron\"",
+    "preelectron-pack": "yarn generate",
+    "electron-pack": "electron-builder"
+  },
+  "main": "main.js",
+  "build": {
+    "icon": "static/favicon.png",
+    "productName": "Nuxt and Electron App",
+    "files": [
+      "build/**/*",
+      "main.js"
+    ],
+    "win": {},
+    "linux": {},
+    "mac": {}
+  },
+  "dependencies": {
+    "core-js": "^3.25.3",
+    "electron-serve": "^1.1.0",
+    "nuxt": "^2.15.8",
+    "vue": "^2.7.10",
+    "vue-server-renderer": "^2.7.10",
+    "vue-template-compiler": "^2.7.10",
+    "vuetify": "^2.6.10"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.12.3",
+    "concurrently": "^7.6.0",
+    "electron": "^22.0.0",
+    "electron-builder": "^23.6.0",
+    "wait-on": "^7.0.1"
+  }
+}
